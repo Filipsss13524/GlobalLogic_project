@@ -23,12 +23,12 @@ class Shop:
 
     def write_new_price(self, price, product):
         self.df_list.loc[product]['price'] = price
-        self.df_list.to_json(path_or_buf = 'store_base.json',
+        self.df_list.to_json(path_or_buf = self.date,
                              orient="table")
 
     def write_new_number(self, num, product):
         self.df_list.loc[product]['number'] = num
-        self.df_list.to_json(path_or_buf = 'store_base.json',
+        self.df_list.to_json(path_or_buf = self.date,
                              orient="table")
 
     def show_list_if_product(self):
@@ -41,13 +41,13 @@ class Shop:
         initial_amount = self.check_number_of_product(product)
         final_state = initial_amount + add_num
         self.write_new_number(final_state, product)
-        print(f"/{product}/{initial_amount}/{add_num}/{final_state}/")
+        return f"/{product}/{initial_amount}/{add_num}/{final_state}/"
 
     def buy_product(self, product, buy_amount):
         initial_amount = self.check_number_of_product(product)
         final_state = initial_amount - buy_amount
         self.write_new_number(final_state,product)
-        print(f"/{product}/{initial_amount}/{buy_amount}/{final_state}/")
+        return f"/{product}/{initial_amount}/{buy_amount}/{final_state}/"
 
 
 
