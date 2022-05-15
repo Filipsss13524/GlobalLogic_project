@@ -1,0 +1,1 @@
+{"schema":{"fields":[{"name":"name","type":"string"},{"name":"number","type":"integer"},{"name":"price","type":"integer"}],"primaryKey":["name"],"pandas_version":"0.20.0"},"data":[{"name":"apple","number":2,"price":20},{"name":"orange","number":0,"price":4},{"name":"pear","number":15,"price":4},{"name":"melon","number":4,"price":3}]}
